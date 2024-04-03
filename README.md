@@ -13,12 +13,17 @@
     "include": ["src/**/*"],
     "exclude": ["node_modules", "**/*.spec.ts"]
 
-// Add to package.json jest enabling @imports
+// Add to package.json jest enabling @imports, and move it to jest.json
 "jest": {
   ...
    "moduleNameMapper": {
       "^@/(.*)": "<rootDir>/$1"
     }
+}
+
+// Add to .vscode/settings.json to run jest on demand
+{
+  "jest.runMode": "on-demand"
 }
 
 ```
