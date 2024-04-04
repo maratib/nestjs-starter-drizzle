@@ -5,6 +5,8 @@ import { AppService } from './app.service';
 import { validationSchema } from './config/config.schema';
 import { config } from './config';
 import { LoggerService } from './logger/logger.service';
+import { DrizzleModule } from './drizzle/drizzle.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -13,6 +15,8 @@ import { LoggerService } from './logger/logger.service';
       validationSchema,
       load: [config],
     }),
+    DrizzleModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService, LoggerService],

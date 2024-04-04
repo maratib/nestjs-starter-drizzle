@@ -1,5 +1,18 @@
 # Nest.js Starter
 
+### Nestjs Drizzle
+
+```bash
+yarn add drizzle-orm pg @nestjs/config
+yarn add -D drizzle-kit @types/pg @faker-js/faker tsx
+nest g mo drizzle
+# Run
+yarn schema
+yarn push # to push schema to db
+yarn seed # for seeding
+yarn studio # for exploring db
+```
+
 ### Nestjs Logging
 
 Nest.js built in logger cannot do FILE loggings.
@@ -102,3 +115,4 @@ git branch -a
 - nestjs-pre-config-with-alias
 - nestjs-config
 - nestjs-logging
+- nestjs-drizzle

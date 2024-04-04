@@ -5,6 +5,7 @@ import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
 import { LoggerService } from './logger/logger.service';
 import { WinstonModule } from 'nest-winston';
+import { ValidationPipe } from '@nestjs/common';
 // import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
 
 async function bootstrap() {
@@ -17,6 +18,8 @@ async function bootstrap() {
   const loggerService: LoggerService = app.get(LoggerService);
 
   const configService: ConfigService = app.get(ConfigService);
+  app.useGlobalPipes(new ValidationPipe({ transform: true }));
+  app.setGlobalPrefix('/api/v1');
   await app.listen(configService.get('port'));
 
   loggerService.warn('Server PORT : ' + configService.get('port'), this);
