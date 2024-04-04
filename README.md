@@ -80,3 +80,4 @@ git branch -a
 
 - nestjs-fresh
 - nestjs-pre-config-with-alias
+- nestjs-config
