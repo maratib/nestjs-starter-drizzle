@@ -1,5 +1,30 @@
 # Nest.js Starter
 
+### Nestjs Config
+
+```bash
+yarn add @nestjs/config joi
+```
+
+```javascript
+//1. environment loaded from .env at first place
+//2. config/config.schema.ts using joi validate the config environment
+//3. config/index.ts environment further customized and loaded for using the default ConfigService.
+//4. Check .env.example
+
+// Add this to app.module.ts
+ConfigModule.forRoot({
+      isGlobal: true,
+      validationSchema,
+      load: [config],
+    }),
+
+//Loading ConfigService in main.ts
+import { ConfigService } from '@nestjs/config';
+const configService: ConfigService = app.get(ConfigService);
+const port = configService.get('port')
+```
+
 ### Nestjs preConfig with alias
 
 ```javascript
