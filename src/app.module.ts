@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { validationSchema } from './config/config.schema';
 import { config } from './config';
+import { LoggerService } from './logger/logger.service';
 
 @Module({
   imports: [
@@ -14,6 +15,6 @@ import { config } from './config';
     }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, LoggerService],
 })
 export class AppModule {}

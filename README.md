@@ -1,5 +1,25 @@
 # Nest.js Starter
 
+### Nestjs Logging
+
+Nest.js built in logger cannot do FILE loggings.
+
+```bash
+# Add winston to project
+yarn add nest-winston winston
+# Go through logger folder and main.ts (check import 'dotenv/config' is added to force the .env to be loaded globally)
+# .env Log file Path and enable disable fileLogging by 0, 1
+FILE_LOGGING=0
+LOG_PATH='/logs/app.log'
+```
+
+```javascript
+// Add to main.ts
+const app = await NestFactory.create(AppModule, {
+  logger: ['error', 'warn'],
+});
+```
+
 ### Nestjs Config
 
 ```bash
