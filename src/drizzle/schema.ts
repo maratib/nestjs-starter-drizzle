@@ -1,9 +1,9 @@
-import { serial, text, pgTable } from 'drizzle-orm/pg-core';
+import { uuid, pgTable, varchar } from 'drizzle-orm/pg-core';
 import { InferInsertModel, InferSelectModel } from 'drizzle-orm';
 
 export const users = pgTable('users', {
-  id: serial('id').primaryKey(),
-  email: text('email'),
+  id: uuid('id').defaultRandom().primaryKey(),
+  email: varchar('email', { length: 150 }).notNull(),
 });
 
 export type User = InferSelectModel<typeof users>;

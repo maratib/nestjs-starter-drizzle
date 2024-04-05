@@ -23,7 +23,7 @@ export class UsersService {
     return await this.conn.query.users.findMany();
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     return await this.conn.query.users.findFirst({
       where: eq(schema.users.id, id),
     });
