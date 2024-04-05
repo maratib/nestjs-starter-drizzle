@@ -16,6 +16,7 @@ yarn studio # for exploring db
 ### Nestjs Logging
 
 Nest.js built in logger cannot do FILE loggings.
+[Winston for nest](https://github.com/kimkimani/logging-nestjs-with-winston/tree/main)
 
 ```bash
 # Add winston to project
