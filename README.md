@@ -8,7 +8,7 @@ yarn add -D drizzle-kit @types/pg @faker-js/faker tsx
 nest g mo drizzle
 # Run
 yarn schema
-yarn push # to push schema to db
+yarn migrate # to push schema to db
 yarn seed # for seeding
 yarn studio # for exploring db
 ```
