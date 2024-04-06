@@ -10,6 +10,7 @@ nest g mo drizzle
 yarn schema
 yarn migrate # to push schema to db
 yarn seed # for seeding
+yarn introspect # recreate schema from DB
 yarn studio # for exploring db
 ```
 
