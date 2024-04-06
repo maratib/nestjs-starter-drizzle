@@ -10,3 +10,16 @@ export function config(): IConfig {
     testing,
   };
 }
+
+export function configFilePath(): string {
+  let envFilePath = `${process.cwd()}/.env`;
+  const ENV = process.env.NODE_ENV;
+  if (ENV == 'development') {
+    envFilePath = `${process.cwd()}/config/development.env`;
+  } else if (ENV == 'production') {
+    envFilePath = `${process.cwd()}/config/production.env`;
+  } else if (ENV == 'test') {
+    envFilePath = `${process.cwd()}/config/test.env`;
+  }
+  return envFilePath;
+}

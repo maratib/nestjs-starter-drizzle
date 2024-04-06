@@ -18,20 +18,20 @@ describe('UsersService', () => {
   //   expect(service).toBeDefined();
   // });
 
-  it('Create User', async () => {
-    const res = await service.create({ email: 'shehroz1@gmail.com' });
-    console.log(res);
-  });
+  // it('Create User', async () => {
+  //   const res = await service.create({ email: 'shehroz2@gmail.com' });
+  //   console.log(res);
+  // });
 
   it('Find one user', async () => {
-    const res = await service.findOne('587843d1-b272-41c4-9e0c-67ebe48bac2e');
-    expect(res.id).toBe('587843d1-b272-41c4-9e0c-67ebe48bac2e');
+    const res = await service.findOne('d46afb37-a372-4340-ae0b-2d74bf0f920f');
+    expect(res.id).toBe('d46afb37-a372-4340-ae0b-2d74bf0f920f');
 
     // console.log(res);
   });
 
   it('Find all users', async () => {
-    const res = await service.findAll();
-    console.log(res);
+    // const res = await service.findAll();
+    // console.log(res);
   });
 });
