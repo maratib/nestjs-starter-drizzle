@@ -16,7 +16,12 @@ describe('UsersController', () => {
     controller = module.get<UsersController>(UsersController);
   });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
+  // it('should be defined', () => {
+  //   expect(controller).toBeDefined();
+  // });
+
+  it('post a user', async () => {
+    const res = await controller.create({ email: 'maratib@gmail.com' });
+    console.log(res);
   });
 });

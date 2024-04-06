@@ -1,5 +1,5 @@
 {
-  "id": "b126f40e-84e6-482a-91f5-5a364708de25",
+  "id": "5a79d0a3-8ad3-41e7-aefe-f3691d87ca6f",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -19,13 +19,21 @@
           "name": "email",
           "type": "varchar(150)",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         }
       },
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {
+        "users_email_unique": {
+          "name": "users_email_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "email"
+          ]
+        }
+      }
     }
   },
   "enums": {},

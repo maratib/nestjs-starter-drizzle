@@ -5,6 +5,7 @@ import { PG_CONNECTION } from '@/constants';
 import { NodePgDatabase } from 'drizzle-orm/node-postgres';
 import * as schema from '../drizzle/schema';
 import { eq } from 'drizzle-orm';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -29,11 +30,18 @@ export class UsersService {
     });
   }
 
-  // update(id: number, updateUserDto: UpdateUserDto) {
-  //   return `This action updates a #${id} user`;
-  // }
+  async update(id: string, updateUserDto: UpdateUserDto) {
+    return await this.conn
+      .update(schema.users)
+      .set(updateUserDto)
+      .where(eq(schema.users.id, id))
+      .returning();
+  }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(id: string) {
+    return await this.conn
+      .delete(schema.users)
+      .where(eq(schema.users.id, id))
+      .returning();
   }
 }

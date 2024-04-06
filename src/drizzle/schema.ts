@@ -3,7 +3,7 @@ import { InferInsertModel, InferSelectModel } from 'drizzle-orm';
 
 export const users = pgTable('users', {
   id: uuid('id').defaultRandom().primaryKey(),
-  email: varchar('email', { length: 150 }).notNull(),
+  email: varchar('email', { length: 150 }).unique(),
 });
 
 export type User = InferSelectModel<typeof users>;
